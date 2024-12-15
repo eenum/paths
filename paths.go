@@ -348,7 +348,7 @@ func (m *Grid) GetPathFromCells(start, dest *Cell, diagonals, wallsBlockDiagonal
 			left := false
 			leftNeighbor := m.Get(node.Cell.X-1, node.Cell.Y)
 			if leftNeighbor != nil && leftNeighbor.Walkable {
-				up = true
+				left = true
 			}
 
 			right := false
@@ -356,7 +356,6 @@ func (m *Grid) GetPathFromCells(start, dest *Cell, diagonals, wallsBlockDiagonal
 			if rightNeighbor != nil && rightNeighbor.Walkable {
 				right = true
 			}
-
 
 			if node.Cell.X > 0 && node.Cell.Y > 0 {
 				c := m.Get(node.Cell.X-1, node.Cell.Y-1)
